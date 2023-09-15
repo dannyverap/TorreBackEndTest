@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const favorites_1 = require("../controllers/favorites");
+const router = (0, express_1.Router)();
+exports.router = router;
+router.post("/", favorites_1.postFavoriteUser);
+router.get("/", favorites_1.getAllFavorites);
+router.get("/:ardaId", favorites_1.getUserByArdaId);
+router.delete("/:ardaId", favorites_1.deleteFavoriteUser);
